@@ -1,0 +1,18 @@
+Chu/Edmiston/Keba
+
+CMSI 387 Operating Systems
+	Semester Project
+===================================
+
+This is a great idea!  Make sure that you ask the
+user if the drive SHOULD be formatted before actually
+doing the formatting.
+
+Should be interesting to see how formatting gets
+automatically linked to the kernel when you get this
+completed.
+
+You'll be using the "/dev" directory, right?
+
+Project approved.  Good work and good luck!
+

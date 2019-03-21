@@ -1,0 +1,29 @@
+
+
+CMSI 387 Operating Systems
+Results for Homework #2 Evaluation
+==================================
+
+Question 1 mutex reversing:          5/ 5 points
+Question 2 auditing code change:     5/ 5 points
+Question 3 test program:            20/20 points
+Question 4 notifyall() addition:     5/10 points
+Question 5a 2-phase locking:         5/ 5 points
+Question 5b short read locks:        5/ 5 points
+Question 5c snapshot isolation:      5/ 5 points
+Question 6 virtual address xlate:    5/ 5 points
+Question 7 calc. explanation:        5/ 5 points
+Question 8 loop 4096 analysis:      15/20 points
+Question 9 fork() and tree:         15/15 points
+
+Total 90 out of 100 = 90.00% which is an A-minus
+
+Comments:
+---------
+Had to take 5 points off the notifyAll() because it hangs and
+doesn't actually work.
+
+Had to take 5 points off the 4096 program because there's no
+code in your repo for it.
+
+Nice work!

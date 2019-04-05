@@ -18,11 +18,14 @@ int main(){
     // When there is no error, open returns the smallest file
     // descriptor not already in use by this process, so having
     // closed STDOUT_FILENO, the open should reuse that number.
-    if(open("derpp.txt", O_RDONLY) < 0){
+    int fd = open("/etc/passwd", O_RDONLY) ;
+    if(fd < 0){
       perror("error opening /etc/passwd");
       return -1;
     }
+    dup2(fd, 0);
     execlp("tr", "tr", "a-z", "A-Z", NULL); 
+
     perror("error executing ps");
     return -1;
   } else {
@@ -30,6 +33,6 @@ int main(){
       perror("error waiting for child");
       return -1;
    }
-  printf("Note the parent still has the old standard output.\n");
+  printf("\nNote the parent still has the old standard output.\n");
   }
 }

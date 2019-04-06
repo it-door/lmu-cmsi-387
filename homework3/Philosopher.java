@@ -15,18 +15,24 @@ public class Philosopher implements Runnable {
         Thread.sleep((int) (Math.random() * 100));
     }
 
+    private double elapsedTimeInSecond(long start, long end) {
+        long elapsedTime = end - start;
+        return (double) elapsedTime / 1_000_000_000;
+    }
+
     @Override
     public void run() {
+        long start = System.nanoTime();
         try {
             while (true) {
-                doAction(System.nanoTime() + ": Thinking"); // thinking
+                doAction("is thinking at " + elapsedTimeInSecond(start, System.nanoTime()) + " seconds"); // thinking
                 synchronized (leftFork) {
-                    doAction(System.nanoTime() + ": Picked up left fork");
+                    doAction("picked up left fork at " + elapsedTimeInSecond(start, System.nanoTime()) + " seconds");
                     synchronized (rightFork) {
-                        doAction(System.nanoTime() + ": Picked up right fork - eating"); // eating
-                        doAction(System.nanoTime() + ": Put down right fork");
+                        doAction("picked up right fork " + elapsedTimeInSecond(start, System.nanoTime()) + " seconds and is now eating"); // eating
+                        doAction("put down right fork at " + elapsedTimeInSecond(start, System.nanoTime()));
                     }
-                    doAction(System.nanoTime() + ": Put down left fork. Returning to thinking");
+                    doAction("put down left fork at " + elapsedTimeInSecond(start, System.nanoTime()) + " seconds and is now returning to thinking");
                 }
             }
         } catch (InterruptedException e) {

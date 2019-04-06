@@ -1,8 +1,9 @@
 public class DiningPhilosophers {
-    
+
     public static void main(String[] args) throws Exception {
 
         Philosopher[] philosophers = new Philosopher[5];
+        String[] names = {"Aymeric", "Estinien", "Haurchefaunt", "Hraesvelgr", "Midgardsormr"};
         Object[] forks = new Object[philosophers.length];
 
         for (int i = 0; i < forks.length; i++) {
@@ -20,7 +21,7 @@ public class DiningPhilosophers {
                 philosophers[i] = new Philosopher(leftFork, rightFork);
             }
 
-            Thread t = new Thread(philosophers[i], "Philosopher " + (i + 1));
+            Thread t = new Thread(philosophers[i], "Philosopher " + names[i]);
             t.start();
         }
     }

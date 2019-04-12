@@ -8,15 +8,7 @@ Not Applicable, unless new bash script that `udev` will trigger counts
 
 ### 2.3 – Class diagram showing affected modules [and any new modules] and how they related to one another
 
-drive inserted -> `udev`
-
-`fstab` (on boot) -> `udev`
-
-`udev` -> bash script
-
-bash script -> `dd` to format drive if necessary
-
-bash script -> `mount` to mount drive
+![alt text](./56883582_449724615800813_1435083822113751040_n.png)
 
 ### 2.4 – List or table of explanations of all command line options that will be implemented
 N/A
